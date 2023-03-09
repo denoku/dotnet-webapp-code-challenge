@@ -3,11 +3,7 @@ import { Link, } from "react-router-dom";
 
 
 
-function SiteNav(props) {
-    //const navigate = useNavigate();
-
-
-
+function SiteNav() {
 
 
     return (

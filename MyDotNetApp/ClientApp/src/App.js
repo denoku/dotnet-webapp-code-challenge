@@ -11,7 +11,7 @@ function App() {
     <div className="App">
        <SiteNav  />
        <Routes>
-       <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/users" element={<Users />}></Route>
         <Route path="/user/:name" element={<UserPage />}></Route>
         <Route path="/favorites" element={<FavoriteUsers />}></Route>

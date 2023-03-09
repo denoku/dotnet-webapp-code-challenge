@@ -35,7 +35,6 @@ const getUsersRepos = (username) =>{
 
 
 const onGlobalSuccess = response => {
-    /// Should not use if you need access to anything other than the data
     return response.data;
   };
   

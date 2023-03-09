@@ -9,7 +9,6 @@ const Users = () => {
         userComponents: [],
         since: 0,
         per_page: 28,
-        // totalCount: 10
     });
 
     const [searchUser, setSearchUser] = useState({
@@ -91,7 +90,6 @@ const Users = () => {
         setUsers((prev) => {
             const pd = { ...prev };
             pd.since = prev.since + 28
-            // pd.pageIndex = prev.pageIndex +1
             return pd
         })
     }
