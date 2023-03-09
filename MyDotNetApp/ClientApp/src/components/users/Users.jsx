@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import usersService from "../services/usersService";
 import SingleUser from "./SingleUser";
 
@@ -7,8 +7,8 @@ const Users = () => {
     const [users, setUsers] = useState({
         arrayOfUsers: [],
         userComponents: [],
-        // since: 0,
-        // pageSize: 8,
+        since: 0,
+        per_page: 28,
         // totalCount: 10
     });
 
@@ -17,10 +17,12 @@ const Users = () => {
 
     });
 
+    const bottomRef = useRef(null);
+
     useEffect(() => {
         usersService
-            .getAllUsers().then(onGetUserSuccess).catch(onGetUserError)
-    }, [])
+            .getAllUsers(users.since, users.per_page).then(onGetUserSuccess).catch(onGetUserError)
+    }, [users.since, users.per_page])
 
     const onGetUserSuccess = (data) => {
         console.log(data);
@@ -85,6 +87,15 @@ const Users = () => {
         console.log("searchUserError", err);
     }
 
+    const loadMore = () => {
+        setUsers((prev) => {
+            const pd = { ...prev };
+            pd.since = prev.since + 28
+            // pd.pageIndex = prev.pageIndex +1
+            return pd
+        })
+    }
+
     return (
         <React.Fragment>
             <h1 className="">Users</h1>
@@ -97,6 +108,7 @@ const Users = () => {
                 <div className="row">
                     {users.arrayOfUsers.map(mapUsers)}
                 </div>
+                <button className="btn btn-primary " ref={bottomRef} onClick={loadMore}>Load more Users</button>
             </div>
 
         </React.Fragment>

@@ -19,8 +19,9 @@ function SingleUser(props) {
         if (favoriteUsers.indexOf(user) === -1) {
             favoriteUsers.push(user);
             localStorage.setItem("FavoriteUsers", JSON.stringify(favoriteUsers));
+            alert("Favorite added to list!")
         } else {
-            console.log(`${user} already exists in favorites`);
+            alert(`${user} already exists in favorites`);
         }
     }
 
@@ -40,7 +41,7 @@ function SingleUser(props) {
                         <p className="card-text">{aUser.bio}</p>
                         <div className="d-flex justify-content-between align-items-center">
                             <div className="btn-group">
-                                <a href={aUser.htmlUrl} className="btn btn-sm btn-outline-secondary">View Profile</a>
+                                <a href={aUser.html_url} className="btn btn-sm btn-outline-secondary">View Profile</a>
                                 <form method="post" action="Favorites">
                                     <input type="hidden" name="username" value={aUser.login} />
                                     <button type="button" className="btn btn-sm btn-outline-secondary"
