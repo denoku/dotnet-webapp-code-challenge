@@ -1,0 +1,16 @@
+
+
+I first attempted to build out this whole web app using just .NET and it was proving difficult as I didn't have much experience using .NET like this. I did end up building a React dotnet app as I feel more comfortable with that as I am very used to using it. To start off the challenge I created a service file where I would write out the api calls to the GitHub API. I also tested them first in Postman to make sure I had the correct endpoints and everything worked. I used axios to return the data to my react components.
+
+With the service file built I started by making a users page that would use the get a list of users api and display cards of all the users passed back. To store the data returned from the api call I built a state with an arrayOfUsers and that would be where all the users data would sit. I then passed it to the SingleUser component. I passed it using props passed through the importing that service in my map function. That component would render a card for each and display a bit of information. I added to each card a button to view the users profile as well as an add to favorites button.
+
+For the next step I learned a little about local storage as I never used it before but it was pretty straight forward. When you click on the add to favorites button it will run a function which stores that specific user and all their information in a storage and also has a check so you can't add the same user twice. I also added an alert so you can see adding your favorite was successful or not.
+
+With my local storage I created a new Favorites page that would display all the favorite users. I just used my local storage to grab the users that were stored there and rendered them to the page. On these cards I added a delete button which will delete the person from local storage and also an edit button. I used some conditional rendering to change the button so when you click add note it will change to edit note. I also hid the input so that it will only show when you click the add note button. It's not great but it shows a note about the person and also stores it in a separate local storage for notes.
+
+Next I just added the search functionality to the users page. I already built the service so I just added the service. The searchSuccess handler like the getAllUsers handler would receieve the data and store it in the array and that would render the searched user to the page.
+
+Lastly I just kind of cleaned up some things. I didn't like my Api call for users as it was not set up fully as I was only grabbing 30 users and you couldn't see any more so I added some functionality that would let you click a button and get the next 30 users.
+I also added where you can click on the users picture and it will take you to a separate page that would display a list of repos that have in their profile. To do this on the singleUsers page I would pass state when you click on their image and then would use that state to run the repos api to find that users repos.
+
+If I did have more time I would like this user page to look better with more information and more styling. I think it would be interesting to have a full page that is fully finished. I would definitely fix a lot of the styling things as well if I had more time like making buttons in correct places and things more centered and visually appealing.
