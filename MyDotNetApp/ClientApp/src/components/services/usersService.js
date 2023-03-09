@@ -1,15 +1,26 @@
 import axios from "axios";
 
 
-const getUser =() =>{
+const getUser =(username) =>{
    
     const config = {
         method: 'GET',
-        url: "https://api.github.com/users/Denoku",
+        url: `https://api.github.com/users/${username}`,
         crossdomain: true,
         headers: { 'Content-Type': 'application/json' },
     };
     return axios(config).then(onGlobalSuccess).catch(onGlobalError);
+};
+
+const getAllUsers = () =>{
+
+  const config = {
+    method: 'GET',
+    url: "https://api.github.com/users",
+    crossdomain: true,
+    headers: {'Content-Type' : 'application/json'},
+  };
+  return axios(config).then(onGlobalSuccess).catch(onGlobalError);
 };
 
 const onGlobalSuccess = response => {
@@ -21,4 +32,6 @@ const onGlobalSuccess = response => {
     return Promise.reject(err);
   };
 
-export default getUser;
+const usersService = {getUser, getAllUsers}
+
+export default usersService;
