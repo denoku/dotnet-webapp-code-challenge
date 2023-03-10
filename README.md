@@ -8,17 +8,28 @@ Getting Started:
 
 To get started with this app, follow these steps:
 
-1.Clone this repository using Git.
+1. Clone this repository using Git.
+
+
+
 git clone https://github.com/your-username/MyDotNetApp.git
 
-2.Install the required dependencies using NPM.
+2. Install the required dependencies using NPM.
+
+
+
 cd MyDotNetApp/ClientApp
 npm install
 
 3. Start the React development server.
+
+
+
 npm start
 
-4.In a separate terminal window, start the .NET development server.
+4. n a separate terminal window, start the .NET development server.
+
+
 cd ../
 dotnet run
 
