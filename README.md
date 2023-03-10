@@ -35,3 +35,5 @@ dotnet run
 
 
 The application should now be running at http://localhost:5000 in your browser.
+
+All the code worked on for this can be found in src folder of the clientapp
