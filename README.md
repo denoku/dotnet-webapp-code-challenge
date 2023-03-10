@@ -1,7 +1,7 @@
 
 How to Run:
 
-MyDotNetApp
+
 This is a web application built using .NET and React.
 
 Getting Started:
